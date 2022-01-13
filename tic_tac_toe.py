@@ -1,26 +1,28 @@
 print("Welcome to the Tic Tac Toe Game")
-space_1 = 1 
-space_2 = 2
-space_3 = 3
-space_4 = 4
-space_5 = 5
-space_6 = 6
-space_7 = 7
-space_8 = 8
-space_9 = 9
-player_turn = "x"
 
-def view_board():
-    print(f"{space_1} | {space_2} | {space_3}")
+def create_board():
+    board = []
+    for square in range(9):
+        board.append(square + 1)
+    return board
+
+
+def view_board(board):
+    print()
+    print(f"{board[0]} | {board[1]} | {board[2]}")
     print("-+-+-+-+-+")
-    print(f"{space_4} | {space_5} | {space_6}")
+    print(f"{board[3]} | {board[4]} | {board[5]}")
     print("-+-+-+-+-+")
-    print(f"{space_7} | {space_8} | {space_9}")
+    print(f"{board[6]} | {board[7]} | {board[8]}")
+    print()
+
 
 
 def main():
-    view_board()
-    print(f"{player_turn}'s turn to choose a square (1-9)")
+    the_board = create_board()
+    view_board(the_board)
+    
+    
 
 
 
