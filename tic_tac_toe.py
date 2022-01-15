@@ -1,4 +1,5 @@
 print("Welcome to the Tic Tac Toe Game")
+player_turn = "x"
 
 def create_board():
     board = []
@@ -15,6 +16,26 @@ def view_board(board):
     print("-+-+-+-+-+")
     print(f"{board[6]} | {board[7]} | {board[8]}")
     print()
+
+def user_choose_square(player_turn, board):
+    print(f"It is {player_turn}'s turn to pick a square(1-9)")
+    square_choice = input(int("What square will you choose"))
+
+    board[square_choice - 1] = player_turn
+
+def winner(board): 
+    return (board[0] == board[1] == board[2] or
+           board[0] == board[3] == board[6] or
+           board[1] == board[4] == board[7] or
+           board[2] == board[5] == board[8] or
+           board[3] == board[4] == board[5] or
+           board[6] == board[7] == board[8] or
+           board[0] == board[4] == board[8] or
+           board[2] == board[4] == board[6])
+
+def tie(board)
+
+           
 
 
 
