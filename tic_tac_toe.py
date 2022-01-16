@@ -1,5 +1,4 @@
 print("Welcome to the Tic Tac Toe Game")
-#player_turn = "x"
 
 def create_board():
     board = []
@@ -33,20 +32,11 @@ def winner(board):
            board[0] == board[4] == board[8] or
            board[2] == board[4] == board[6])
 
-def tie(board):
-    print("Its a tie")
-
-
-
 def next_player(current):
     if current == "" or current == "o":
         return "x"
     elif current == "x":
         return "o"
-
-           
-
-
 
 def main():
     player = next_player("")
@@ -66,15 +56,16 @@ def main():
         the_board[6] == the_board[7] == the_board[8] or
         the_board[0] == the_board[4] == the_board[8] or
         the_board[2] == the_board[4] == the_board[6]):
-            print(f"{player} is the winner! Good game!")
+            if player == "x":
+                print("O is the winner! Good game!")
 
-        
+            if player == "o":
+                print("X is the winner! Good game!")
 
-
-
-
-
-
+    elif (the_board[0] and the_board[1] and the_board[2] and 
+          the_board[3] and the_board[4] and the_board[5] and 
+          the_board[6] and the_board[7] and the_board[8]) == "x" or "o":
+        print("The Game has ended a tie!")
 
 if __name__ == "__main__":
     main()
