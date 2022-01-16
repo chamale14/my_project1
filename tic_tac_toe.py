@@ -19,7 +19,7 @@ def view_board(board):
 
 def user_choose_square(player_turn, board):
     print(f"It is {player_turn}'s turn to pick a square(1-9)")
-    square_choice = input(int("What square will you choose"))
+    square_choice = int(input("What square will you choose"))
 
     board[square_choice - 1] = player_turn
 
@@ -33,15 +33,33 @@ def winner(board):
            board[0] == board[4] == board[8] or
            board[2] == board[4] == board[6])
 
-def tie(board)
+def tie(board):
+    print("Its a tie")
+
+
+
+def next_player(current):
+    if current == "" or current == "o":
+        return "x"
+    elif current == "x":
+        return "o"
 
            
 
 
 
 def main():
+    player = next_player("")
     the_board = create_board()
+
+    while not (winner(the_board)):
+        view_board(the_board)
+        user_choose_square(player_turn, the_board)
+        player = next_player(player)
+    
     view_board(the_board)
+    print("Good Game!")
+
     
     
 
